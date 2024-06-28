@@ -688,7 +688,7 @@ AddItemToUl(movies[9].Title);
 */
 
 function RemoveAllLi() {
-    const list = document.querySelector('ul');
+    const list = document.querySelector('#myList');
 
     // OPZIONE 1
     // // finchè list ha un first child (quindi un li) continua
