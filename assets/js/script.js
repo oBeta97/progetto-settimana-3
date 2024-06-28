@@ -8,35 +8,124 @@ REGOLE
 */
 
 // JS Basics
-
-
 /* ESERCIZIO A
   Crea una variabile chiamata "sum" e assegnaci il risultato della somma tra i valori 10 e 20.
 */
+
+// easy way
+let sum = 10 + 20;
+console.log('ESERCIZIO A (easy):', sum);
+// function way
+const Sum = (...args) => args.reduce((n1, n2) => n1 + n2);
+
+sum = Sum(10,20);
+
+console.log('ESERCIZIO A (function):', sum);
+
 
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
 
+// easy way
+let random = Math.floor(Math.random() * 21);
+console.log('ESERCIZIO B (easy):', random);
+
+const RandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+random = RandomNum(0,20);
+console.log('ESERCIZIO B (function):', random);
+
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
+
+const me = {
+    name: 'Paolo',
+    surname: 'Pellizzari',
+    age: 27
+}
+console.log('ESERCIZIO C:', me);
 
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
 
+// easy way
+delete me['age'];
+console.log('ESERCIZIO D (easy):', me);
+
+
+// function way
+function RemoveAttribute(obj, attr){
+    
+    // ... Controls that obj is an Object, attr is a string and obj have the attr attribute ... 
+    
+    delete obj[attr];
+    
+    return obj;
+}
+
+let newMe = RemoveAttribute({...me}, 'age');
+
+console.log('ESERCIZIO D (function):', newMe);
+
+
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
 
+me.skills = ['C#', 'SQL', 'Javascript']
+
+console.log('ESERCIZIO E (easy):', me);
+
+function AddAttribute(obj, attr, val){
+    
+    obj[attr] = val;
+
+    return obj;
+
+}
+
+newMe = AddAttribute(newMe, 'skills', ['C#', 'SQL', 'Javascript']);
+
+console.log('ESERCIZIO E (function):', newMe);
+
+
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
+// easy way
+me.skills.push('HTML');
+
+console.log('ESERCIZIO F (easy):', me);
+
+
+function PushToAttribute (obj, attr, val){
+    obj[attr].push(val)
+
+    return obj;
+}
+
+newMe = PushToAttribute(newMe, 'skills', 'HTML');
+
+console.log('ESERCIZIO F (function):', newMe);
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+
+me.skills.pop();
+
+console.log('ESERCIZIO G (easy):', me);
+
+function RemoveAttributeLastItem (obj, attr){
+    obj[attr].pop();
+    return obj;
+}
+
+newMe = RemoveAttributeLastItem(newMe, 'skills')
+
+console.log('ESERCIZIO G (function):', newMe);
 
 // Funzioni
 
