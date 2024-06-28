@@ -556,16 +556,21 @@ console.log(`ESERCIZIO 16:`, SumAllTheYears(movies));
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
-function SearchByTitle(arr, string) {
-    const res = [];
+// function SearchByTitle(arr, string) {
+//     const res = [];
 
-    arr.forEach(item => {
-        if (item.Title.toLowerCase().includes(string.toLowerCase()))
-            res.push(item);
-    });
+//     arr.forEach(item => {
+//         if (item.Title.toLowerCase().includes(string.toLowerCase()))
+//             res.push(item);
+//     });
 
-    return res;
-}
+//     return res;
+// }
+
+const SearchByTitle = (arr, string) => 
+    //Grazie prof! <3
+    arr.filter(item =>  item.Title.toLowerCase().includes(string.toLowerCase()));
+
 
 console.log(`ESERCIZIO 17:`, SearchByTitle(movies, 'avengers'));
 
