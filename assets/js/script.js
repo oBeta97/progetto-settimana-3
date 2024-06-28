@@ -424,10 +424,10 @@ console.log(`ESERCIZIO 15:`, OnlyInLastMillennium(movies));
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
-function SumAllTheYears(arr){
+function SumAllTheYears(arr) {
     let arrYears = OnlyTheYears(arr);
-    
-    return arrYears.reduce((tot, item) => parseInt(tot) + parseInt(item)); 
+
+    return arrYears.reduce((tot, item) => parseInt(tot) + parseInt(item));
 }
 
 console.log(`ESERCIZIO 16:`, SumAllTheYears(movies));
@@ -437,7 +437,7 @@ console.log(`ESERCIZIO 16:`, SumAllTheYears(movies));
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
-function SearchByTitle(arr, string){
+function SearchByTitle(arr, string) {
     const res = [];
 
     arr.forEach(item => {
@@ -455,9 +455,9 @@ console.log(`ESERCIZIO 17:`, SearchByTitle(movies, 'avengers'));
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
-function SearchAndDivide(arr, string){
+function SearchAndDivide(arr, string) {
     const res = {
-        match:SearchByTitle(arr,string),
+        match: SearchByTitle(arr, string),
         unmatch: []
     }
 
@@ -492,29 +492,103 @@ console.log('***************** DOM *****************')
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+function getContainerDiv() {
+    // return document.getElementById('container');
+    return document.querySelector('#container');
+}
+
+console.log(`ESERCIZIO 20:`, getContainerDiv());
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+
+function GetAllTd() {
+    return document.querySelectorAll('td');
+}
+
+console.log(`ESERCIZIO 21:`, GetAllTd());
+
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
+function TdsInnerText() {
+    const tds = GetAllTd();
+
+    tds.forEach(item =>
+        console.log(`ESERCIZIO 22:`, item.innerText)
+    )
+}
+
+TdsInnerText();
+
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+
+function ChangeAsColor() {
+    const as = document.querySelectorAll('a');
+
+    as.forEach(element => {
+        element.classList.add('bgcolor-red')
+    });
+}
+
+ChangeAsColor();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
+function AddItemToUl(liText) {
+
+    const ul = document.querySelector('ul');
+
+    const newLi = document.createElement('li');
+    newLi.innerHTML = liText;
+
+    ul.appendChild(newLi);
+
+}
+
+AddItemToUl(movies[9].Title);
+
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+function RemoveAllLi() {
+    const list = document.querySelector('ul');
+
+    // OPZIONE 1
+    // // finchè list ha un first child (quindi un li) continua
+    // while(list.firstChild)
+    //     // rimuovi il first child (quiindi il prossimo li)
+    //     list.removeChild(list.firstChild);
+
+    // OPZIONE 2
+    list.innerHTML = "";
+}
+
+RemoveAllLi()
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+function AddClassToAllTr(className) {
+
+    let trs = document.querySelectorAll('tr');
+
+    trs.forEach(element => {
+        element.classList.add(className)
+    });
+
+}
+
+AddClassToAllTr('test')
 
 // [EXTRA] JS Avanzato
 
