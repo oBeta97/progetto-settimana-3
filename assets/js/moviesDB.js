@@ -1,4 +1,4 @@
-
+/* Questo array viene usato per gli esercizi. Non modificarlo. */
 const movies = [
     {
       Title: 'The Lord of the Rings: The Fellowship of the Ring',

@@ -591,6 +591,7 @@ function AddClassToAllTr(className) {
 AddClassToAllTr('test')
 
 // [EXTRA] JS Avanzato
+console.log('***************** [EXTRA] JS Avanzato *****************')
 
 /* ESERCIZIO 27
   Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
@@ -604,6 +605,28 @@ AddClassToAllTr('test')
 
 */
 
+function HalfTree(treeHeight) {
+    const halfTreeDiv = document.getElementById('halfTree')
+    let x = '';
+
+    for (let i = 0; i < treeHeight; i++) {
+        x = x.concat('*');
+        const p = document.createElement('p')
+        p.innerText = x;
+
+        halfTreeDiv.appendChild(p);
+    }
+
+    const p = document.createElement('p')
+    p.innerText = '|'
+
+
+    halfTreeDiv.appendChild(p);
+
+}
+
+HalfTree(5)
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -615,9 +638,50 @@ AddClassToAllTr('test')
   *****
 
 */
+function tree(treeHeight) {
+    const treeDiv = document.getElementById('tree')
+    treeDiv.classList.add('fit-content')
+    let x = '';
+
+    for (let i = 0; i < treeHeight; i++) {
+        x = x.concat('*');
+        const p = document.createElement('p')
+        p.classList.add('text-centered');
+        p.innerText = x;
+
+        treeDiv.appendChild(p);
+    }
+
+    const p = document.createElement('p')
+    p.classList.add('text-centered');
+    p.innerText = '॥'
+
+
+    treeDiv.appendChild(p);
+
+
+}
+
+tree(5)
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
+function IsItPrime(n){
+    let res = true
+
+    for(let i = 2; i < n ; i++){
+        if(n % i === 0){
+            res = false
+            break;
+        }
+    }
+
+    return res; 
+}
+
+let n = GetRandomNum(1,100);
+
+
+console.log(`ESERCIZIO 29 (${n}):`, IsItPrime(n));

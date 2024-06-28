@@ -5,3 +5,15 @@
 .test{
     background-color: greenyellow;
 }
+
+.text-centered{
+    text-align: center;
+}
+
+p{
+    margin: 0;
+}
+
+.fit-content{
+    width: fit-content;
+}
