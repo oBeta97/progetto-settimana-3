@@ -585,10 +585,14 @@ function SearchAndDivide(arr, string) {
         unmatch: []
     }
 
-    arr.forEach(item => {
-        if (!item.Title.toLowerCase().includes(string.toLowerCase()))
-            res.unmatch.push(item);
-    });
+    // arr.forEach(item => {
+    //     if (!item.Title.toLowerCase().includes(string.toLowerCase()))
+    //         res.unmatch.push(item);
+    // });
+
+    //Grazie prof! <3
+    arr.filter(item =>  !item.Title.toLowerCase().includes(string.toLowerCase()));
+
 
     return res;
 }
