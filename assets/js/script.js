@@ -672,7 +672,7 @@ ChangeAsColor();
 
 function AddItemToUl(liText) {
 
-    const ul = document.querySelector('ul');
+    const ul = document.querySelector('#myList');
 
     const newLi = document.createElement('li');
     newLi.innerHTML = liText;
