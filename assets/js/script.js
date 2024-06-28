@@ -19,7 +19,7 @@ console.log('ESERCIZIO A (easy):', sum);
 // function way
 const Sum = (...args) => args.reduce((n1, n2) => n1 + n2);
 
-sum = Sum(10,20);
+sum = Sum(10, 20);
 
 console.log('ESERCIZIO A (function):', sum);
 
@@ -33,7 +33,7 @@ let random = Math.floor(Math.random() * 21);
 console.log('ESERCIZIO B (easy):', random);
 
 const GetRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-random = GetRandomNum(0,20);
+random = GetRandomNum(0, 20);
 console.log('ESERCIZIO B (function):', random);
 
 /* ESERCIZIO C
@@ -57,14 +57,14 @@ console.log('ESERCIZIO D (easy):', me);
 
 
 // function way
-function RemoveAttribute(obj, attr){
-    
+function RemoveAttribute(obj, attr) {
+
     delete obj[attr];
-    
+
     return obj;
 }
 
-let newMe = RemoveAttribute({...me}, 'age');
+let newMe = RemoveAttribute({ ...me }, 'age');
 
 console.log('ESERCIZIO D (function):', newMe);
 
@@ -77,8 +77,8 @@ me.skills = ['C#', 'SQL', 'Javascript']
 
 console.log('ESERCIZIO E (easy):', me);
 
-function AddAttribute(obj, attr, val){
-    
+function AddAttribute(obj, attr, val) {
+
     obj[attr] = val;
 
     return obj;
@@ -99,7 +99,7 @@ me.skills.push('HTML');
 console.log('ESERCIZIO F (easy):', me);
 
 
-function PushToAttribute (obj, attr, val){
+function PushToAttribute(obj, attr, val) {
     obj[attr].push(val)
 
     return obj;
@@ -117,7 +117,7 @@ me.skills.pop();
 
 console.log('ESERCIZIO G (easy):', me);
 
-function RemoveAttributeLastItem (obj, attr){
+function RemoveAttributeLastItem(obj, attr) {
     obj[attr].pop();
     return obj;
 }
@@ -133,15 +133,15 @@ console.log('***************** Funzioni *****************')
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
 
-function Dice(){
-    return GetRandomNum(1,6)
+function Dice() {
+    return GetRandomNum(1, 6)
 }
 
 console.log('ESERCIZIO 1 (easy):', Dice());
 
 
-function RollDice(nrFaces){
-    return GetRandomNum(1,nrFaces);
+function RollDice(nrFaces) {
+    return GetRandomNum(1, nrFaces);
 }
 
 console.log('ESERCIZIO 1 (dynamic):', RollDice(6));
@@ -150,17 +150,17 @@ console.log('ESERCIZIO 1 (dynamic):', RollDice(6));
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
 
-const WhoIsBigger = (n1,n2) => (n1 > n2) ? n1 : n2;
+const WhoIsBigger = (n1, n2) => (n1 > n2) ? n1 : n2;
 
-let number1 = GetRandomNum(0,10);
-let number2 = GetRandomNum(0,10);
+let number1 = GetRandomNum(0, 10);
+let number2 = GetRandomNum(0, 10);
 
 console.log('number1', number1)
 console.log('number2', number2)
 
 console.log('ESERCIZIO 2 (easy):', WhoIsBigger(number1, number2));
 
-function WhoIsBigger2 (...args){
+function WhoIsBigger2(...args) {
     let res = 0;
 
     args.forEach(element => {
@@ -171,11 +171,11 @@ function WhoIsBigger2 (...args){
 }
 
 
-number1 = GetRandomNum(0,10);
-number2 = GetRandomNum(0,10);
-let number3 = GetRandomNum(0,10);
-let number4 = GetRandomNum(0,10);
-let number5 = GetRandomNum(0,10);
+number1 = GetRandomNum(0, 10);
+number2 = GetRandomNum(0, 10);
+let number3 = GetRandomNum(0, 10);
+let number4 = GetRandomNum(0, 10);
+let number5 = GetRandomNum(0, 10);
 
 
 console.log('number1', number1)
@@ -196,13 +196,13 @@ console.log('ESERCIZIO 2 (dynamic):', WhoIsBigger2(number1, number2, number3, nu
 
 let stringaEsercizi = "I love coding";
 
-function SplitMe(string){
+function SplitMe(string) {
     return string.split(' ');
 }
 
 console.log('ESERCIZIO 3 (easy):', SplitMe(stringaEsercizi));
 
-function SplitMe2(string, splitter){
+function SplitMe2(string, splitter) {
     return string.split(splitter);
 }
 
@@ -213,8 +213,8 @@ console.log('ESERCIZIO 3 (dynamic):', SplitMe(stringaEsercizi, ' '));
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
 
-function DeleteOne(string, flag){
-    if(flag)
+function DeleteOne(string, flag) {
+    if (flag)
         return string.slice(1, string.length)
     else
         return string.slice(0, -1)
@@ -243,11 +243,11 @@ const str = 'ci40 c0m3 s74i?';
 // console.log(indices); // This will output [2, 3, 5, 7, 10, 11]
 // avendo gli indici basta fare un map con uno slice al suo interno con l'indice e 1
 
-function OnlyLetters(string){
-    let numbers = ['0','1','2','3','4','5','6','7','8','9'];
+function OnlyLetters(string) {
+    let numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     let stringCharacters = SplitMe2(string, '');
     let res = ''
-    
+
     stringCharacters.forEach((character) => !numbers.includes(character) ? res = res.concat(character) : null);
 
     return res
@@ -261,7 +261,7 @@ console.log('ESERCIZIO 5:', OnlyLetters(str));
 */
 let email = 'ciao@ciao.it'
 
-const IsThisAnEmail = (string) =>  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(string);
+const IsThisAnEmail = (string) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(string);
 
 console.log(`ESERCIZIO 6 (${email}):`, IsThisAnEmail(email));
 
@@ -270,7 +270,7 @@ console.log(`ESERCIZIO 6 (${email}):`, IsThisAnEmail(email));
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 
-const WhatDayIsIt =  () => new Date().toLocaleDateString('it-IT', { weekday: 'long' });
+const WhatDayIsIt = () => new Date().toLocaleDateString('it-IT', { weekday: 'long' });
 
 console.log(`ESERCIZIO 7:`, WhatDayIsIt());
 
@@ -289,14 +289,14 @@ console.log(`ESERCIZIO 7:`, WhatDayIsIt());
   }
 */
 
-function RollTheDices(nrDices){
+function RollTheDices(nrDices) {
 
     const obj = {
         sum: 0,
         values: []
     }
 
-    for(let i = 0; i < nrDices; i++)
+    for (let i = 0; i < nrDices; i++)
         obj.values.push(Dice());
 
     obj.sum = obj.values.reduce((sum, item) => sum + item);
@@ -304,15 +304,15 @@ function RollTheDices(nrDices){
     return obj;
 }
 
-console.log(`ESERCIZIO 8:`, RollTheDices(GetRandomNum(1,12)));
+console.log(`ESERCIZIO 8:`, RollTheDices(GetRandomNum(1, 12)));
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
-function HowManyDays(date){
+function HowManyDays(date) {
     let actualDate = new Date;
-    
+
     return Math.floor((date - actualDate) / (1000 * 60 * 60 * 24));
 }
 
@@ -324,12 +324,12 @@ console.log(`ESERCIZIO 9:`, HowManyDays(testDate));
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
-function IsTodayMyBirthday(){
+function IsTodayMyBirthday() {
     // const today = new Date(2024,3,8); // true
     const today = new Date(); // false
 
-    const myBirthDay = new Date (1997, 3, 8);
-    
+    const myBirthDay = new Date(1997, 3, 8);
+
     let myBirthDayMonth = myBirthDay.getMonth();
     let myBirthDayDay = myBirthDay.getDate();
 
@@ -348,45 +348,144 @@ console.log('***************** Arrays & Oggetti *****************')
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
-
 /* ESERCIZIO 11
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
+// ctrl c - ctrl v  dal esercizio D :P
+function DeleteProp(obj, attr) {
+
+    delete obj[attr];
+
+    return obj;
+}
+
+console.log(`ESERCIZIO 11:`, DeleteProp(movies[0], 'Poster'));
+
+
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
+
+function NewestMovie(arr) {
+    let res = 0;
+    let resIndex = 0;
+
+    arr.forEach((item, index) => {
+        let itemYearParsed = parseInt(item.Year);
+        if (itemYearParsed > res) {
+            res = itemYearParsed;
+            resIndex = index;
+        }
+    })
+
+    return arr[resIndex];
+}
+
+console.log(`ESERCIZIO 12:`, NewestMovie(movies));
+
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
 
+const CountMovies = (arr) => arr.length;
+
+console.log(`ESERCIZIO 13:`, CountMovies(movies));
+
+
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+
+const OnlyTheYears = (arr) => arr.map(item => item.Year);
+
+console.log(`ESERCIZIO 14:`, OnlyTheYears(movies));
+
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
 
+function OnlyInLastMillennium(arr) {
+    const res = [];
+
+    arr.forEach(item => {
+        if (item.Year < 2000)
+            res.push(item);
+    });
+
+    return res;
+}
+console.log(`ESERCIZIO 15:`, OnlyInLastMillennium(movies));
+
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
+function SumAllTheYears(arr){
+    let arrYears = OnlyTheYears(arr);
+    
+    return arrYears.reduce((tot, item) => parseInt(tot) + parseInt(item)); 
+}
+
+console.log(`ESERCIZIO 16:`, SumAllTheYears(movies));
+
+
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+
+function SearchByTitle(arr, string){
+    const res = [];
+
+    arr.forEach(item => {
+        if (item.Title.toLowerCase().includes(string.toLowerCase()))
+            res.push(item);
+    });
+
+    return res;
+}
+
+console.log(`ESERCIZIO 17:`, SearchByTitle(movies, 'avengers'));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+function SearchAndDivide(arr, string){
+    const res = {
+        match:SearchByTitle(arr,string),
+        unmatch: []
+    }
+
+    arr.forEach(item => {
+        if (!item.Title.toLowerCase().includes(string.toLowerCase()))
+            res.unmatch.push(item);
+    });
+
+    return res;
+}
+
+console.log(`ESERCIZIO 18:`, SearchAndDivide(movies, 'avengers'));
+
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
+function RemoveIndex(arr, index) {
+    arr.splice(index, 1);
+    return arr
+}
+
+console.log(`ESERCIZIO 19:`, RemoveIndex(movies, 0));
+
+
+
+console.log('***************** DOM *****************')
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
